@@ -1,0 +1,29 @@
+{
+  "theme": "dark-ansi",
+  "statusLine": {
+    "type": "command",
+    "command": "$HOME/.claude/statusline.sh",
+    "padding": 1
+  },
+  "tui": "fullscreen",
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "deny": ["Read(./.env*)", "Read(**/.env*)", "Read(**/secrets/**)"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git *)",
+            "command": "$HOME/.claude/hooks/block-destructive-git.sh",
+            "shell": "bash",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
