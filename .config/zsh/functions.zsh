@@ -77,7 +77,7 @@ qlp() {
 
 
 quick_daily_note() {
-    notes_path="$HOME/obsidian-notes/surveymonkey-notes/daily"
+    notes_path="$HOME/obsidian-notes/work-notes/daily"
     mkdir -p "$notes_path"
     note_file="$notes_path"/$(date +%Y-%m-%d).md
     echo "***$(date +%H:%M)***" >> "$note_file" && vim + "$note_file" < /dev/tty
