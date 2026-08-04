@@ -75,6 +75,10 @@ fi
 [ -d "/opt/homebrew/opt/node@22/bin" ] && \
   PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
+# MySQL 8.4 client (keg-only — must precede any mysql@9 on PATH)
+[ -d "/opt/homebrew/opt/mysql-client@8.4/bin" ] && \
+  PATH="/opt/homebrew/opt/mysql-client@8.4/bin:$PATH"
+
 # Flyway CLI (installed by dre-cicd-internal/scripts/localdev-setup.py)
 [ -d "$HOME/.local/share/flyway" ] && \
   PATH="$HOME/.local/share/flyway:$PATH"
