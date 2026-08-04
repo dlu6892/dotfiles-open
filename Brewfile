@@ -1,6 +1,3 @@
-# Taps
-tap "homebrew/bundle"
-
 # Shell & terminal
 brew "eza"
 brew "bat"
@@ -32,8 +29,7 @@ brew "neovim"
 brew "gh"
 brew "ghq"
 brew "git-lfs"
-brew "gitflow"
-brew "git-credential-manager"
+brew "git-flow"
 
 # Neovim treesitter
 brew "tree-sitter"
@@ -46,6 +42,7 @@ brew "node@22"
 # Cloud & infra
 brew "colima"        # lightweight container runtime (no GUI)
 brew "docker"        # docker CLI (daemon provided by colima)
+cask "rancher"       # Rancher Desktop — local k8s + container runtime (required for Flyway local DB)
 brew "kubectl"
 brew "kubectx"
 brew "helm"
@@ -59,6 +56,8 @@ brew "speedtest-cli"
 
 # Data (CLI clients only — run services via Docker Compose)
 brew "postgresql@16"    # psql
+brew "libpq"            # PostgreSQL client libs — run `brew link --force libpq` after bundle
+brew "mysql-client@8.4" # MySQL 8 client for Flyway local dev — do NOT use 9 (missing mysql_native_password.so)
 brew "redis"            # redis-cli
 brew "sqlite"
 brew "jq"
@@ -95,6 +94,7 @@ cask "slack"
 cask "zoom"
 
 # Casks — Dev tools
+cask "git-credential-manager"
 cask "insomnia"
 cask "proxyman"
 
